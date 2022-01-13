@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/DaggerHiltNetworkConnection.iml" filepath="$PROJECT_DIR$/.idea/DaggerHiltNetworkConnection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DaggerHiltNetworkConnection.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DaggerHiltNetworkConnection.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DaggerHiltNetworkConnection.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/DaggerHiltNetworkConnection.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/DaggerHiltNetworkConnection.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/DaggerHiltNetworkConnection.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/DaggerHiltNetworkConnection.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/DaggerHiltNetworkConnection.domain.iml" />
+    </modules>
+  </component>
+</project>

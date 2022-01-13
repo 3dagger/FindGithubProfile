@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="kr.dagger.findgithubprofile.presentation.ui.main.MainActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="activity"
+            type="kr.dagger.findgithubprofile.presentation.ui.main.MainActivity" />
+
+        <variable
+            name="vm"
+            type="kr.dagger.findgithubprofile.presentation.ui.main.MainViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topCl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Find Github Profile"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imgGithub"
+            loadImage="@{vm.userInfo.data.avatar_url}"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/ic_img_github"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/searchTil"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:hint="유저 검색"
+            app:boxStrokeColor="@color/black"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:endIconMode="clear_text"
+            app:helperText="찾고 싶은 유저아이디를 입력해주세요"
+            app:layout_constraintTop_toBottomOf="@id/imgGithub"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent"
+            app:startIconDrawable="@drawable/ic_baseline_find_in_page_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtSearchText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:inputType="text"
+                android:maxLength="30"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_search"
+            android:visibility="@{vm.isSearchEnabled ? View.VISIBLE : View.INVISIBLE}"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/black"
+            android:clickable="true"
+            android:paddingVertical="10dp"
+            android:text="검색"
+            android:onClick="@{() -> activity.moveUserDetailActivity()}"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchTil" />
+
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{vm.isLoading ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
